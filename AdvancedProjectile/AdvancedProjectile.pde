@@ -1,6 +1,6 @@
 Projectile proj;
-float g = 9.8;
-float v0 = 90;
+float g = -9.8;
+float v0 = 100;
 float dt = 0.1;
 
 void setup(){

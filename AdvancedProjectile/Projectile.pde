@@ -3,16 +3,18 @@ class Projectile{
   float theta;
   PVector v = new PVector();
   PVector pos = new PVector();
+  PVector epos;
   PVector p0;
   float x;
   float h;
   
   Projectile(PVector pos, PVector epos, float v0){
     this.pos = pos;
+    this.epos = epos;
     p0 = pos.copy();
     this.v0 = v0;
     this.x = epos.x - pos.x;
-    this.h = pos.y - epos.y;
+    this.h = epos.y - pos.y;
     AcalcTheta();
     firing();
   }
@@ -33,8 +35,8 @@ class Projectile{
   
   void show(){
     stroke(0);
-    point(pos.x, height-pos.y);
+    point(pos.x, pos.y);
     stroke(255, 0, 0);
-    point(p0.x+x, height-p0.y-h);
+    point(epos.x, epos.y);
   }
 }
