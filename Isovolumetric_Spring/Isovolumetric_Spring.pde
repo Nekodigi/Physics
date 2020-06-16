@@ -5,8 +5,8 @@ float drag = 0.01;
 Node A;
 
 void setup() {
-  fullScreen();
-  //size(1000, 1000);
+  //fullScreen();
+  size(1000, 1000);
   A = new Node(0, 0);
   Node prevNode = A;
   nodes.add(A);
