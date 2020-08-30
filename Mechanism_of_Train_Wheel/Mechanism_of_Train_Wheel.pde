@@ -24,16 +24,17 @@ void setup(){
   }
   wheel = new Wheel(height-300, 50, height-50, 50, 50);
   strokeWeight(5);
-  stroke(255);
   //frameRate(1);
   background(0);
 }
 
 void draw(){
   //background(255);
+  noStroke();
   fill(0, 10);
   rect(0, 0, width, height);
   
+  stroke(255);
   fill(0);
   L.show();
   R.show();
@@ -75,7 +76,7 @@ class Wheel{
     //calculate movement axis of rotation
     float x = wl*Rr/(Lr-Rr);//distance between intersection and axis of rotation
     float theta = atan2(B.y-A.y, B.x-A.x);
-    float dtheta = -speed/x;println(x, theta, Lr, Rr, r, dstR);
+    float dtheta = -speed/x;
     if(Lr > Rr){
       PVector aor = PVector.add(interR, PVector.fromAngle(theta).mult(x));//axis of rotation
       float dstB_aor = PVector.dist(B, aor);
